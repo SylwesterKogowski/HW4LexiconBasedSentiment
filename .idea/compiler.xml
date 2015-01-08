@@ -25,5 +25,8 @@
         <module name="HW4LexiconBasedSentiment" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="HW4LexiconBasedSentiment" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

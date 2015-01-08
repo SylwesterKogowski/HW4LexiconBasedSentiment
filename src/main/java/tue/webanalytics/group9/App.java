@@ -5,7 +5,7 @@ import org.deeplearning4j.text.sentenceiterator.FileSentenceIterator;
 import org.deeplearning4j.text.sentenceiterator.SentenceIterator;
 import org.deeplearning4j.text.sentenceiterator.SentencePreProcessor;
 
-import java.io.File;
+import java.io.*;
 import java.net.URISyntaxException;
 
 /**
@@ -42,7 +42,7 @@ public class App
         return 0;
     }
 
-     void start(File inputFile) throws URISyntaxException {
+     void start(File inputFile) throws Exception {
          loadSentiWordNetVectors();
 
          processInput(inputFile);
@@ -53,9 +53,14 @@ public class App
     }
 
 
-    void loadSentiWordNetVectors() throws URISyntaxException {
+    void loadSentiWordNetVectors() throws Exception {
         File sentiwordnet = new File(getClass().getResource("/SentiWordNet_3.0.0_20130122.txt").toURI());
+        BufferedReader br = new BufferedReader(new FileReader(sentiwordnet));
+        String line;
+        while((line = br.readLine()) != null)
+        {
 
+        }
         //TODO:finish this
     }
 }

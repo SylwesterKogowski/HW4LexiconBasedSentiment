@@ -5,5 +5,7 @@ package tue.webanalytics.group9;
  */
 public class WordVector {
     int id;
-
+    String word;
+    float positive;
+    float negative;
 }

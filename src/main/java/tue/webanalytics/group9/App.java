@@ -7,6 +7,10 @@ import org.deeplearning4j.text.sentenceiterator.SentencePreProcessor;
 
 import java.io.*;
 import java.net.URISyntaxException;
+import java.util.Dictionary;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Hello world!
@@ -59,6 +63,7 @@ public class App
         String line;
         while((line = br.readLine()) != null)
         {
+            String[] s = line.split("\t");
 
         }
         //TODO:finish this

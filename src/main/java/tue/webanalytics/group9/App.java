@@ -19,6 +19,7 @@ import java.util.Map;
 public class App
 {
 
+    WordCollection wordCollection = new WordCollection();
 
     public static int main( String[] args )
     {
@@ -64,8 +65,15 @@ public class App
         while((line = br.readLine()) != null)
         {
             String[] s = line.split("\t");
-
+            int id = Integer.parseInt(s[1]);
+            float positive = Float.parseFloat(s[2]);
+            float negative = Float.parseFloat(s[3]);
+            String[] words = s[4].split(" ");
+            for(String word:words)
+            {
+                String w = word.substring(0,word.indexOf('#'));
+                wordCollection.addWord(w,id,positive,negative);
+            }
         }
-        //TODO:finish this
     }
 }

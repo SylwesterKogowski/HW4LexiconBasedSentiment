@@ -6,6 +6,7 @@ import org.deeplearning4j.text.sentenceiterator.SentenceIterator;
 import org.deeplearning4j.text.sentenceiterator.SentencePreProcessor;
 
 import java.io.File;
+import java.net.URISyntaxException;
 
 /**
  * Hello world!
@@ -32,24 +33,29 @@ public class App
             return 2;
         }
         App app = new App();
-        app.start(input);
+        try {
+            app.start(input);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 1;
+        }
         return 0;
     }
 
-     void start(File inputFile)
-     {
+     void start(File inputFile) throws URISyntaxException {
          loadSentiWordNetVectors();
 
          processInput(inputFile);
      }
 
     private void processInput(File inputFile) {
-
+        //TODO:finish this
     }
 
 
-    void loadSentiWordNetVectors()
-    {
+    void loadSentiWordNetVectors() throws URISyntaxException {
+        File sentiwordnet = new File(getClass().getResource("/SentiWordNet_3.0.0_20130122.txt").toURI());
 
+        //TODO:finish this
     }
 }

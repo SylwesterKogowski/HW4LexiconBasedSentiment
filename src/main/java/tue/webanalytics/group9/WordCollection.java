@@ -9,18 +9,15 @@ public class WordCollection {
     HashMap<Integer,Word> idToWord = new HashMap<>();
     HashMap<String,Word> stringToWord = new HashMap<>();
     public void addWord(String word,int id,float positive, float negative){
+
         if(stringToWord.containsKey(word))
         {
-
-            //TODO:finish
+            Word oldWord = stringToWord.get(word);
+            oldWord.addAnotherDef(negative,positive,word);
         }
         else
         {
-            Word newWord = new Word();
-            newWord.id = id;
-            newWord.negative = negative;
-            newWord.positive = positive;
-            newWord.word = word;
+            Word newWord = new Word(id,negative,positive,word);
             idToWord.put(id,newWord);
             stringToWord.put(word,newWord);
         }

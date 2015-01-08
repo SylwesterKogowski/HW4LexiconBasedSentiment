@@ -38,13 +38,18 @@ public class App
 
      void start(File inputFile)
      {
-         SentenceIterator iter = new FileSentenceIterator(new SentencePreProcessor() {
-             @Override
-             public String preProcess(String sentence) {
-                 return new
-                         InputHomogenization(sentence).transform();
-             }
-         },inputFile);
+         loadSentiWordNetVectors();
 
+         processInput(inputFile);
      }
+
+    private void processInput(File inputFile) {
+
+    }
+
+
+    void loadSentiWordNetVectors()
+    {
+
+    }
 }

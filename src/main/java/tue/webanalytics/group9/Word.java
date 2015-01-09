@@ -24,16 +24,16 @@ public class Word {
         if(positive  > negative)
         {
             if(getObjectivity() > positive)
-                return 0;
+                return App.sentimentEnum.neutral.getNumVal();
             else
-                return 1;
+                return App.sentimentEnum.positive.getNumVal();
         }
         else
         {
             if(getObjectivity() > negative)
-                return 0;
+                return App.sentimentEnum.neutral.getNumVal();
             else
-                return -1;
+                return App.sentimentEnum.negative.getNumVal();
 
         }
     }

@@ -12,6 +12,33 @@ public class Word {
     float totalPositive;
     int amount;
 
+    public float getObjectivity() {
+        return 1-(positive+negative);
+    }
+
+    /**
+     * Will give sentiment classification for that word
+     * @return 0 if neutral, -1 if negative, 1 if positive
+     */
+    public int getSentiment(){
+        if(positive  > negative)
+        {
+            if(getObjectivity() > positive)
+                return 0;
+            else
+                return 1;
+        }
+        else
+        {
+            if(getObjectivity() > negative)
+                return 0;
+            else
+                return -1;
+
+        }
+    }
+
+
     public Word(int id, float negative, float positive, String word) {
 
         this.id = id;
